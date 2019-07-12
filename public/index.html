@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Atatürk Quotes API</title>
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAjp59AFFiQQD0/eoApbWUAFZrOAA9WDYAGysUACxHKAAEIQAA1t7OADBKKABeb00AS1w5AMjQtwCdr4wADyAPAHqKXgAoOCAA9fvuABcgGABVZkUAhJRzANbezwBzhFYAMUopAF9vTgDt9+MAiZl5AGV2SABQYUAAExkWADlTMgCktJMA9vf1AL3GrQB+j24A5+/eAJWmhQAYNRAA1d3NAOvz4QAcNhMAHy8ZAHSFWgDHz7YAHzcWAO335ADa4tMA9vf2AJGhgAAGFwAAWmpKAIOTcgAwSSgAxs60AHWHWADu9+UAIDoXAMvTwwBmdlMAFBsVADlSMQAoNyAA4+rRAPf39wAXKA8Aa3tZAObu3QDV3MMAWWlIANTczABDWzoAHjYVAIeXdgANExAA7fbjAB45FQDu9+YAM00sAJ2ujQAmMx4AIj0YAKGykAAjQBgAVGRDAPf3+AD49/gAz9fHAC9IJwBEXjsAnKyIADJMKgAfORYA7/fnACMyHAAiOhkAAAEAAAAEAAAnNh8AOFEwACo6IgC7xKsA+Pf5AM/XyAA9VjYAGigRAFhpSgDT28sAlqiGAEJaOQAtRyUAQ1o5AEVePAAxTCsAdYdbACA5FwAOHg8AJTIdAGh5TQCPn34AOlQxALzBrAD39vcAztbGACs6IwD49/oAv8ivAOnx4ADEzLIAMUspACEwGAA0TywAITkYALnCpwApOSEApbWTAPf87wDO1scAP1k4AEFZOADo8N4AxMyzAJusiwAySyoAYXBPACMzGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATl5BJUpajJJAjAcTJSVOQV4iXnhrcIcyEBpFjkReIl5BMV4jHnEUUj02FQ8lVkFBTjGNBCdCbiQjfI9QKF4xTht+WI8IcxhGHYl3LQpMfhtOTmh/PAE1bVVIN2ZHZ04xQV58IQUsFoFofIqGKE5eTmdnFw5hiAo7MIApO4AbMS8vOWwRVDgLeosKGgCAe1ZnTkElhxl1hUNTCgpbCl5eQTlObIcfTy5LGYNfUYJeVlZOLwM2kE1ldiqET2IrXjEbQUFiEl10dElZPgyRAl5BQU4xbxlqPyBpPy4/cgJXXkFBIhyMBmOHfXlgNA0mXiJBQTFBRDMSGVw6ZDYJQUFBQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,700"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+      }
+      body {
+        background: ghostwhite;
+        background-image: url('/public/bg.png'),
+          linear-gradient(white, ghostwhite);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 99% 0%;
+        height: 100vh;
+        font-family: Poppins, serif;
+        font-weight: 400;
+        font-size: 17px;
+        overflow-y: hidden;
+      }
+      .container {
+        max-width: 50rem;
+        width: 100%;
+        padding: 5rem;
+        display: flex;
+        flex-flow: column wrap;
+      }
+      h1 {
+        font-weight: 400;
+      }
+      strong {
+        font-weight: 800;
+      }
+      .btn,
+      .quote {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        background: white;
+        margin-left: 1rem;
+        font-size: 15px;
+        margin-top: 0.5rem;
+      }
+      .quote {
+        align-self: stretch;
+        color: gray;
+        margin-left: 0;
+        font-size: 18px;
+      }
+      .btn {
+        cursor: pointer;
+      }
+      #quote {
+        color: black;
+      }
+      .buttons {
+        display: flex;
+        flex-flow: row;
+        margin-bottom: 0.5rem;
+      }
+      .req {
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      .small {
+        font-size: 12px;
+      }
+      @media only screen and (max-width: 800px) {
+        body {
+          font-size: 13px;
+          background: white;
+        }
+        .container {
+          max-width: 30rem;
+          padding: 3rem 1rem;
+          margin: auto auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>― <strong>Atatürk</strong> Quotes API</h1>
+      <div class="buttons" style="align-self: flex-end;">
+        <button class="btn" onclick="getQuote('tr')">Turkish</button>
+        <button class="btn" onclick="getQuote('en')">English</button>
+      </div>
+      <div class="quote">
+        <div class="req"><strong>GET</strong> <span id="lang"></span></div>
+        {<br />
+        <div style="padding:0 20px;font-style:italic">
+          quote: " <span id="quote" style="font-style:normal"></span>"<br />
+        </div>
+        }
+      </div>
+      <br />
+      <div class="buttons" style="align-self:center;margin-top:2rem;">
+        <a id="share" href="" class="btn small">
+          share
+        </a>
+        <a href="https://github.com/msrkc/ataturk-quotes-api" class="btn small">
+          github
+        </a>
+        <a href="https://twitter.com/murats" class="btn small">@murats</a>
+      </div>
+    </div>
+    <script>
+      function getQuote(lang) {
+        var url = `https://ataturk.now.sh/${lang}`;
+        fetch(url)
+          .then(response => {
+            return response.json();
+          })
+          .then(data => {
+            document.getElementById('quote').textContent = data.quote;
+            document.getElementById(
+              'share'
+            ).href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              data.quote + ' - M. Kemal Atatürk via https://ataturk.now.sh'
+            )}`;
+            document.getElementById(
+              'lang'
+            ).innerHTML = `<a href="https://ataturk.now.sh/${lang}" style="text-decoration:underline">https://ataturk.now.sh/${lang}</a>`;
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
+      getQuote('en');
+    </script>
+  </body>
+</html>
